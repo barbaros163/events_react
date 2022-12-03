@@ -12,9 +12,15 @@
 //? Ayrinti icin : https://reactjs.org/docs/events.html
 
 const Events = () => {
+  const handleClick = () => {
+    alert("Btn Clicked");
+  };
+
   return (
-    <div>
-      <button>Click</button>
+    <div className="container text-center mt-4">
+      <button onClick={handleClick} className="btn btn-success">
+        Click
+      </button>
     </div>
   );
 };
