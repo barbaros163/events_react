@@ -29,6 +29,12 @@ const UseStateCounter = () => {
   //? useState parametre olarak state'in ilk degerini alir.
   const [count, setCount] = useState(0); //? arr destr.
 
+  const [person, setPerson] = useState({
+    name: "John",
+    surname: "Doe",
+    age: 43,
+  });
+
   const inc = () => {
     setCount(count + 1);
   };
@@ -38,6 +44,15 @@ const UseStateCounter = () => {
   //     setCount(count - 1);
   //   }
   // };
+
+  const incAge = () => {
+    //? Bu sekilde bir atama ile sayisal deger state'in üzerine yazilmis oldu
+    //? Dolayisiyla obje yapisi bozuldu.
+    // setPerson(person.age + 1);
+    // setPerson({ name: "Ahmet", surname: "Can", age: 44 });
+
+    setPerson({ ...person, age: person.age + 1 });
+  };
 
   return (
     <div className="container text-center mt-4">
@@ -66,6 +81,12 @@ const UseStateCounter = () => {
       </section>
       <section>
         <h1>USESTATE OBJECT</h1>
+        <h2>{person.name}</h2>
+        <h2>{person.surname}</h2>
+        <h2>{person.age}</h2>
+        <button onClick={incAge} className="btn btn-info">
+          inc age
+        </button>
       </section>
     </div>
   );
