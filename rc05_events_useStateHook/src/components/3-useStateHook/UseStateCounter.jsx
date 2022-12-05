@@ -40,8 +40,8 @@ const UseStateCounter = () => {
   // };
 
   return (
-    <div>
-      <div className="container text-center mt-4">
+    <div className="container text-center mt-4">
+      <section>
         <h1>USESTATE HOOK</h1>
 
         <h2 className="display-4 text-danger">COUNT:{count}</h2>
@@ -63,7 +63,10 @@ const UseStateCounter = () => {
         <button onClick={() => setCount(0)} className="btn btn-dark">
           CLR
         </button>
-      </div>
+      </section>
+      <section>
+        <h1>USESTATE OBJECT</h1>
+      </section>
     </div>
   );
 };
